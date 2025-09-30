@@ -1,0 +1,19 @@
+{
+  "name": "image-compressor",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node ./build/index.js",
+    "build": "npx tsc -b"
+  },
+  "author": "Bogdan Karpuzov",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
