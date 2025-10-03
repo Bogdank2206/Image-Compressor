@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compressed Photos</title>
+    <link rel="icon" type="image/x-icon" href=<%= faviconLink %> />
+    <%- include("imageStyles", {stylesLink}) %>
+</head>
+<body>
+<% images.map((image) => { %>
+    <%- include("image", {...image}) %>
+<% }) %>
+</body>
+</html>

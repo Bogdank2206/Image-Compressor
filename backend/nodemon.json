@@ -1,0 +1,8 @@
+{
+  "watch": [
+    "src"
+  ],
+  "ext": "ts,js,json,ejs,css",
+  "exec": "node --inspect -r ts-node/register ./src/index.ts",
+  "delay": "100"
+}

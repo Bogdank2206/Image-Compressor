@@ -4,16 +4,24 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node ./build/index.js",
-    "build": "npx tsc -b"
+    "build": "tsc"
   },
   "author": "Bogdan Karpuzov",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "multer": "^2.0.2"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.3",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.6.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
-  }
+  },
+  "packageManager": "yarn@4.10.3"
 }

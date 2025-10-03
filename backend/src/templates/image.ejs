@@ -1,0 +1,56 @@
+<div class="container" id="container__<%= originalName %>">
+    <div class="image__container">
+        <img class="img" src="<%= imagePath %>" alt="image" data-image-id="<%= originalName %>"/>
+        <div class="border"
+             style="left: calc(<%= (zoneX / cols) * 100 %>%);
+                     top: calc(<%= (zoneY / rows) * 100 %>%);
+                     width: calc(<%= (1 / cols) * 100 %>%);
+                     height: calc(<%= (1 / rows) * 100 %>%);">
+        </div>
+    </div>
+    <div class="data">
+        <h3><%= originalName %></h3>
+        <p>Coordinates of noisy zone: (<%= zoneX %>, <%= zoneY %>)</p>
+        <p>Mean squared error: <%= err %></p>
+        <p>size difference: <%= diff %></p>
+    </div>
+</div>
+<script>
+    function initContainer(img) {
+        const container = img.parentElement;
+        const imgWidth = img.naturalWidth;
+        const imgHeight = img.naturalHeight;
+
+        let finalWidth = imgWidth;
+        let finalHeight = imgHeight;
+
+        const maxWidth = window.innerWidth * 0.8;
+        const maxHeight = window.innerHeight * 0.7;
+        if (imgWidth > maxWidth || imgHeight > maxHeight) {
+            const ratio = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
+            finalWidth = imgWidth * ratio;
+            finalHeight = imgHeight * ratio;
+        }
+
+        const minWidth = window.innerWidth * 0.7;
+        const minHeight = window.innerHeight * 0.5;
+        if (imgWidth > minWidth || imgHeight > minHeight) {
+            const ratio = Math.min(minWidth / imgWidth, minHeight / imgHeight);
+            finalWidth = imgWidth * ratio;
+            finalHeight = imgHeight * ratio;
+        }
+
+
+        container.style.width = finalWidth + 'px';
+        container.style.height = finalHeight + 'px';
+        container.style.aspectRatio = `${imgWidth}/${imgHeight}`;
+
+        console.log(`Original: ${imgWidth}x${imgHeight}, Final: ${finalWidth}x${finalHeight}`);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const img = document.querySelector('[data-image-id="<%= originalName %>"]');
+        img.addEventListener("load", () => initContainer(img));
+        setTimeout(() => initContainer(img), 2000);
+    })
+</script>
