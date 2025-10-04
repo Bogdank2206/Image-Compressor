@@ -107,27 +107,19 @@
 
 Приложение запускается с помощью Docker Compose. Следуйте инструкциям ниже:
 
-1. В корне проекта создайте файл `.env` со следующим содержимым:
-
-    ```env
-    HOST=0.0.0.0
-    API_LINK=http://api.localhost
-    NEXT_PUBLIC_API_LINK=http://api.localhost
-    ```
-
 1. В папке frontend создайте файл `.env` со следующим содержимым:
 
     ```env
     NEXT_PUBLIC_API_LINK=http://api.localhost
     ```
 
-1. Выполните команду для запуска сервисов:
+2. Выполните команду для запуска сервисов:
 
     ```bash
     docker compose up --no-build -d --pull always
     ```
 
-1. После успешного запуска приложение будет доступно по адресу: http://localhost
+3. После успешного запуска приложение будет доступно по адресу: http://localhost
 
 ## P.S.
 
