@@ -20,7 +20,7 @@ const buttonStyles = {
 export function CompressForm() {
     const [loading, setLoading] = useState<boolean>(false);
     const [loaded, setLoaded] = useState<boolean>(false);
-    const [wait, setWait] = useState<number>(0);
+    const [wait, setWait] = useState<number>(-1);
 
     const pushImage: pushImage = usePushImage();
     const [message, setMessage] = useState<string | null>(null);

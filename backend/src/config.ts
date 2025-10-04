@@ -1,4 +1,7 @@
 import path from "node:path";
+import {Sema} from "async-sema";
+
+export const sema = new Sema(8);
 
 export default {
     PROTOCOL: (process.env.NODE_ENV === 'production') ? 'https' : 'http',

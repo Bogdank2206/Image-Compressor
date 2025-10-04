@@ -3,6 +3,7 @@ import * as util from "node:util";
 import path from "node:path";
 import fs from "fs";
 import {promisify} from "node:util";
+import {sema} from "../../config";
 
 const execPromise = util.promisify(exec);
 
@@ -17,6 +18,7 @@ class CompareService {
     private readonly cols: number;
     private readonly pathToSource: string;
     private readonly pathToCompressed: string;
+    private limit: any;
 
     public constructor(workDir: string, source: string, compressed: string, rows: number, cols: number) {
         this.rows = rows;
@@ -31,10 +33,15 @@ class CompareService {
         const sizeY: number = Math.floor(height / this.cols);
 
         const promises: Promise<errorZone>[] = Array.from({length: this.cols * this.rows}, async (_, idx: number) => {
-            const x: number = idx % this.cols;
-            const y: number = Math.floor(idx / this.cols);
-            const err: number = await this.analyzeZone(x, y, sizeX, sizeY);
-            return ({x, y, err});
+            await sema.acquire();
+            try {
+                const x: number = idx % this.cols;
+                const y: number = Math.floor(idx / this.cols);
+                const err: number = await this.analyzeZone(x, y, sizeX, sizeY);
+                return ({x, y, err});
+            } finally {
+                sema.release();
+            }
         });
 
         const results: errorZone[] = await Promise.all(promises);

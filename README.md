@@ -111,8 +111,7 @@
     NEXT_PUBLIC_API_LINK=http://api.localhost
     ```
 
-2. Запуск приложения:
-   Выполните команду для запуска сервисов:
+2. Выполните команду для запуска сервисов:
 
     ```bash
     docker compose up --no-build -d --pull always

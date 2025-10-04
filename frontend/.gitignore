@@ -4,3 +4,4 @@
 .pnp.loader.mjs
 .pnp.cjs
 node_modules
+.env

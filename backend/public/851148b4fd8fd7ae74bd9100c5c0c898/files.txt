@@ -1,0 +1,6 @@
+http://localhost:5000/851148b4fd8fd7ae74bd9100c5c0c898/compressed/1112024ffa6f2e91178836b8803911b6.jpg;{"zoneX":3,"zoneY":2,"err":1.1306,"rows":"5","cols":"6","originalName":"small-photo.jpeg","diff":"29.76KB"}
+http://localhost:5000/851148b4fd8fd7ae74bd9100c5c0c898/compressed/1112024ffa6f2e91178836b8803911b6.jpg;{"zoneX":3,"zoneY":2,"err":1.1306,"rows":"5","cols":"6","originalName":"small-photo.jpeg","diff":"29.76KB"}
+http://localhost:5000/851148b4fd8fd7ae74bd9100c5c0c898/compressed/f379cfd7a55b621577a8389d1817a102.jpg;{"zoneX":2,"zoneY":0,"err":5763.73,"rows":"5","cols":"6","originalName":"forest.cr2","diff":"13.62MB"}
+http://localhost:5000/851148b4fd8fd7ae74bd9100c5c0c898/compressed/f379cfd7a55b621577a8389d1817a102.jpg;{"zoneX":2,"zoneY":0,"err":5763.73,"rows":"5","cols":"6","originalName":"forest.cr2","diff":"13.62MB"}
+http://localhost:5000/851148b4fd8fd7ae74bd9100c5c0c898/compressed/f379cfd7a55b621577a8389d1817a102.jpg;{"zoneX":2,"zoneY":0,"err":5763.73,"rows":"5","cols":"6","originalName":"forest.cr2","diff":"13.62MB"}
+http://localhost:5000/851148b4fd8fd7ae74bd9100c5c0c898/compressed/f379cfd7a55b621577a8389d1817a102.jpg;{"zoneX":2,"zoneY":0,"err":5763.73,"rows":"5","cols":"6","originalName":"forest.cr2","diff":"13.62MB"}
