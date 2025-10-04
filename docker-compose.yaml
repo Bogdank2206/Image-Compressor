@@ -1,6 +1,7 @@
 services:
     backend:
         hostname: backend
+        image: registry.miem.hse.ru/kg25-26/bkkarpuzov/backend:latest
         build:
             context: ./backend
             dockerfile: Dockerfile
@@ -11,6 +12,7 @@ services:
             - API_LINK=http://api.localhost
     frontend:
         hostname: frontend
+        image: registry.miem.hse.ru/kg25-26/bkkarpuzov/frontend:latest
         build:
             context: ./frontend
             dockerfile: Dockerfile
