@@ -111,13 +111,19 @@
     NEXT_PUBLIC_API_LINK=http://api.localhost
     ```
 
-2. Выполните команду для запуска сервисов:
+1. В папке frontend создайте файл `.env` со следующим содержимым:
+
+    ```env
+    NEXT_PUBLIC_API_LINK=http://api.localhost
+    ```
+
+1. Выполните команду для запуска сервисов:
 
     ```bash
     docker compose up --no-build -d --pull always
     ```
 
-3. После успешного запуска приложение будет доступно по адресу: http://localhost
+1. После успешного запуска приложение будет доступно по адресу: http://localhost
 
 ## P.S.
 

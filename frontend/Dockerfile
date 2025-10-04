@@ -13,7 +13,7 @@ COPY ./app ./app
 COPY ./src/ ./src/
 COPY ./tsconfig.json ./
 COPY ./next-env.d.ts ./next-env.d.ts
-COPY .env ./
+COPY ./.env ./
 
 RUN yarn build
 
@@ -26,8 +26,7 @@ COPY package.json .
 RUN corepack enable
 RUN yarn workspaces focus --all --production
 
-
 COPY --from=builder /app/.next/ ./.next/
-COPY .env ./
+COPY ./.env ./
 
 CMD ["yarn", "start"]

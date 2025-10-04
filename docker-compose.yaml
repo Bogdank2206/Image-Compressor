@@ -4,15 +4,16 @@ services:
         build:
             context: ./backend
             dockerfile: Dockerfile
-        env_file: ./.env
         expose:
             - 5000
+        environment:
+            - HOST=0.0.0.0
+            - API_LINK=http://api.localhost
     frontend:
         hostname: frontend
         build:
             context: ./frontend
             dockerfile: Dockerfile
-        env_file: ./.env
         expose:
             - 3000
     nginx:

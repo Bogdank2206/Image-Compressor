@@ -12,15 +12,15 @@ import { promisify } from "node:util";
 import config from "../config";
 import hashString from "../lib/hasString";
 import cors from "cors";
-import * as ejs from "ejs";
 
 const app: Express = express();
 
 const { SRC_DIR, ROOT_DIR, API_LINK } = config;
 
+app.use(cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 
 app.set("view engine", "ejs");
 app.set("views", path.join(SRC_DIR, "templates"));

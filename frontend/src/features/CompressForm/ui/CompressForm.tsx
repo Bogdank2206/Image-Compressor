@@ -87,6 +87,8 @@ export function CompressForm() {
         if (code === 1 || typeof pageCreators === 'undefined') {
             setMessage(message);
             setLoading(false);
+            clearInterval(intervalId);
+            setWait(-1);
             return;
         }
         try {
@@ -103,8 +105,8 @@ export function CompressForm() {
             console.error(err);
             setMessage("Ошибка обработки файлов");
         } finally {
-            clearInterval(intervalId);
             setWait(-1);
+            clearInterval(intervalId);
             setLoading(false);
         }
     }
