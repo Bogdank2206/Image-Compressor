@@ -1,0 +1,1 @@
+export {instance} from "@/shared/api/instance"

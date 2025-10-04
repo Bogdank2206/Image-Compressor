@@ -1,0 +1,6 @@
+.idea
+.next
+.yarn
+.pnp.loader.mjs
+.pnp.cjs
+node_modules

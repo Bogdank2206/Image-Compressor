@@ -1,0 +1,1 @@
+export {CompressForm} from "@/features/CompressForm/ui/CompressForm";

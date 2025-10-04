@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Compressed Photos</title>
-    <link rel="icon" type="image/x-icon" href=<%= faviconLink %> />
-    <%- include("imageStyles", {stylesLink}) %>
-</head>
-<body>
-<% images.map((image) => { %>
-    <%- include("image", {...image}) %>
-<% }) %>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Compressed Photos</title>
+        <%- include('sizesScript.ejs') %>
+        <link rel="icon" type="image/x-icon" href="<%= faviconLink %>" />
+        <%- include("imageStyles", { stylesLink }) %>
+    </head>
+    <body>
+        <% for (let image of images) { %> <%- include('image', image) %> <% } %>
+    </body>
 </html>
