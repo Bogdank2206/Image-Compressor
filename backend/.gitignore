@@ -5,5 +5,4 @@ node_modules
 tsconfig.tsbuildinfo
 package-lock.json
 .yarn
-yarn.lock
 .yarnrc.yml
