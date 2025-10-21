@@ -3,10 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <title>Compressed Photos</title>
-        <%- include('sizesScript.ejs') %>
         <link rel="icon" type="image/x-icon" href="<%= faviconLink %>" />
-        <%- include("imageStyles", { stylesLink }) %>
-    </head>
+        <link rel="stylesheet" href="<%= stylesLink %>/image.css" />
+        <%- include('sizesScript') %>
     <body>
         <% for (let image of images) { %> <%- include('image', image) %> <% } %>
     </body>

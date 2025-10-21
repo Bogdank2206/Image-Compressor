@@ -172,38 +172,6 @@ app.get("/get-html/:folder", (req: Request, res: Response) => {
         faviconLink: `${API_LINK}/favicon.ico`,
         stylesLink: `${API_LINK}/styles`,
     });
-
-    res.render(
-        "images",
-        {
-            images,
-            faviconLink: `${API_LINK}/favicon.ico`,
-            stylesLink: `${API_LINK}/styles`,
-        },
-        (err, html) => {
-            if (err) {
-                console.error("Rendering error:", err);
-                if (!res.headersSent) {
-                    return res.status(500).json({
-                        code: 1,
-                        message: "Failed to render template",
-                    });
-                }
-                return;
-            }
-
-            if (!res.headersSent) {
-                res.set({
-                    "Content-Type": "text/html",
-                    "Content-Disposition": `attachment; filename="compressed-images.html"`,
-                    "Content-Length": Buffer.byteLength(html, "utf-8"),
-                });
-
-                // Отправляем HTML как Buffer с именем файла
-                res.send(Buffer.from(html, "utf8"));
-            }
-        }
-    );
 });
 
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {

@@ -6,3 +6,5 @@ tsconfig.tsbuildinfo
 package-lock.json
 .yarn
 .yarnrc.yml
+.pnp.cjs
+.pnp.loader.mjs
